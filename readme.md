@@ -22,8 +22,8 @@ airbnb>
 - show collections
 listing
 
-** Below Picture clear for mongoimport tools and file path for import **
--195
+**Below Picture clear for mongoimport tools and file path for import**
+![Screenshot (195)](https://user-images.githubusercontent.com/80479635/152763148-e40a1077-877e-4290-a609-8332d6d2a3dc.png)
 
 # find listing data
 - db.listing.find()
@@ -33,8 +33,9 @@ show all data in listing of airbnb database
 5555
 
 # db.listing.find({'address.country_code':"US" })
--196
--197
+![Screenshot (196)](https://user-images.githubusercontent.com/80479635/152763222-b1a7b038-dd81-4894-9c00-ee5dd0e57245.png)
+![Screenshot (197)](https://user-images.githubusercontent.com/80479635/152763259-7b2a4a10-773e-4c87-8093-0cbc6e83812e.png)
+
 
 # db.listing.find({'address.country_code':"US" },{'address.country_code': 1})
 
@@ -89,9 +90,10 @@ show all data in listing of airbnb database
     address: { country_code: 'US' }
   },
 
-** Below Picture clear above **
-  -198
-  -199
+**Below Picture clear above**
+  ![Screenshot (198)](https://user-images.githubusercontent.com/80479635/152763351-a41e7e62-0610-4de1-b516-b1c6f2c6e078.png)
+![Screenshot (199)](https://user-images.githubusercontent.com/80479635/152763366-6dfdae2a-b6c8-4af4-aa62-403124584a52.png)
+
 
 # db.listing.find({'address.country_code':"US" },{_id: 0,'address.country_code': 1, name: 1})
 [
@@ -130,8 +132,8 @@ show all data in listing of airbnb database
   }
 ]
 
-** Below Picture Clear the above command **
--200
+**Below Picture Clear the above command**
+![Screenshot (200)](https://user-images.githubusercontent.com/80479635/152763489-092b6452-acb5-4e8e-857c-cb0f926d48e6.png)
 
 # db.listing.find({'address.country_code':"US", 'review_scores.review_scores_rating': {$gte: 85}},{_id: 0,'address.country_code': 1, name: 1, review_scores: 1}).limit(1)
 [
@@ -150,9 +152,10 @@ show all data in listing of airbnb database
   }
 ]
 
-** Below Picture for above **
--201
--202
+**Below Picture for above**
+![Screenshot (201)](https://user-images.githubusercontent.com/80479635/152763562-a3f94a68-8d99-4994-8dfd-c40ed4bed510.png)
+![Screenshot (202)](https://user-images.githubusercontent.com/80479635/152763590-dc2e0c3d-f98c-4e2d-a1f0-e5b4a2b9afe0.png)
+
 
 # db.listing.find({'address.country_code':"US", 'review_scores.review_scores_rating': {$gte: 85}},{_id: 0,address: 1, name: 1, review_scores: 1})
 [
@@ -191,8 +194,8 @@ show all data in listing of airbnb database
       }
     },
 
-** Below Picture for above **
--203
+**Below Picture for above**
+![Screenshot (203)](https://user-images.githubusercontent.com/80479635/152763640-2990ab21-a6be-4cac-b5e4-359f4ba1e546.png)
 
 # db.listing.find({ $or: [{'address.country_code': "CA"},{'address.country_code':"US"}]},{_id: 0,address: 1, name: 1, review_scores: 1})
 [
@@ -242,8 +245,8 @@ show all data in listing of airbnb database
 # db.listing.find({ $or: [{'address.country_code': "CA"},{'address.country_code':"US"}]},{_id: 0,address: 1, name: 1, review_scores: 1}).count()
 1871
 
-** Below picture for above **
--204
+**Below picture for above**
+![Screenshot (204)](https://user-images.githubusercontent.com/80479635/152763688-c307c2ec-59be-44d7-8e71-79ce0ae80bb9.png)
 
 # db.listing.find({ $or: [{'address.country_code': "CA"},{'review_scores.review_scores_rating': {$gte: 99}}]},{_id: 0,address: 1, name: 1, review_scores: 1})
 [
@@ -277,8 +280,8 @@ show all data in listing of airbnb database
 -db.listing.find({ $and: [{ 'address.country_code': "CA" }, { 'review_scores.review_scores_rating': { $gte: 99 } }] }, { _id: 0, address: 1, name: 1, review_scores: 1 }).count()
 162
 
-** Below Picture for above **
--205
+**Below Picture for above**
+![Screenshot (205)](https://user-images.githubusercontent.com/80479635/152763793-86b118ce-54e7-43eb-a87a-9c0b3c988d67.png)
 
 # db.listing.find({ $and: [{ 'address.country_code': "CA" }, { $or: [{ 'review_scores.review_scores_rating': 100},{'review_scores.review_scores_rating': 99}] }] }, { _id: 0, address: 1, name: 1, review_scores: 1 }).count()
 162
@@ -289,8 +292,8 @@ show all data in listing of airbnb database
 # db.listing.find({ $and: [{ 'address.country_code': "CA" }, { $or: [{ 'review_scores.review_scores_rating': 99},{'review_scores.review_scores_rating': 99}] }] }, { _id: 0, address: 1, name: 1, review_scores: 1 }).count()
 16
 
-** Below picture for above ** 
--206
+**Below picture for above** 
+![Screenshot (206)](https://user-images.githubusercontent.com/80479635/152763832-fd27061d-aa6d-4a9f-8eda-82232081c1a5.png)
 
 
 # $not:
@@ -308,8 +311,8 @@ show all data in listing of airbnb database
 
 #  db.listing.find({'address.country_code': {$eq: "US"},'amenities.0': 'Wifi' },{amenities: 1})
 
-** Below picture for above **
--208
+**Below picture for above**
+![Screenshot (208)](https://user-images.githubusercontent.com/80479635/152763887-e9064312-4436-48ad-8051-52686461bc7f.png)
 
 # db.listing.find({'address.country_code': {$eq: "US"},'amenities':{$all:['Wifi', 'Shampoo' ]}},{amenities: 1})
 show all data matches 'Wifi' and 'Shampoo'
@@ -317,8 +320,8 @@ show all data matches 'Wifi' and 'Shampoo'
 #  db.listing.find({'address.country_code': {$eq: "US"},'amenities':{$all:['Wifi', 'Shampoo' ]}},{amenities: 1}).count()
 857
 
-** Below Picture show all above **
--209
+**Below Picture show all above**
+![Screenshot (209)](https://user-images.githubusercontent.com/80479635/152763942-953bf772-4484-4cc8-8689-0516b41bb847.png)
 
 # db.listing.find({'address.country_code': {$eq: "US"},'amenities':{$size: 10}},{amenities: 1}).count() 
 29
@@ -343,8 +346,8 @@ show all data matches 'Wifi' and 'Shampoo'
     ]
   },
 
-** Below picture show all above data **
--210
+**Below picture show all above data**
+![Screenshot (210)](https://user-images.githubusercontent.com/80479635/152764014-2419c0bb-a0e9-4344-a112-90335e7b8570.png)
 
 #  $ elemMatch:
 - db.listing.find({'address.country_code': {$eq: "US"}}, {'reviews':{$elemMatch: {reviewer_name: "Richard"}} })
@@ -387,8 +390,8 @@ show all data matches 'Wifi' and 'Shampoo'
   }
 ]
 
-** Below picture for above **
--211
+**Below picture for above**
+![Screenshot (211)](https://user-images.githubusercontent.com/80479635/152764078-b95b5a31-d2d5-4b5b-8e65-f4bbf5978ecb.png)
 
 # it
 [
@@ -411,8 +414,8 @@ show all data matches 'Wifi' and 'Shampoo'
  ..........................
  .............................
 
-** Below picture for above **
--212
+**Below picture for above**
+![Screenshot (212)](https://user-images.githubusercontent.com/80479635/152764116-889b2810-d4f4-45d4-ae5b-97eba414ef2a.png)
 
 # db.listing.find({'address.country_code': {$eq: "US"}}, {'reviews':{$elemMatch: {reviewer_name: "Richard"}} },{_id: 0, reviews: 1}).limit(1)
 [ { _id: '10021707' } ]
